@@ -68,12 +68,9 @@ const App = () => {
         if (timer === 150) {
           setShowMap(true);
           setShowPicture(true);
-          
-        }
-        if (timer === 300) {
           setShowHint(true);
         }
-        if (timer === 900) {
+        if (timer === 600) {
          const message=questions[currentQuestion].answer;
           alert('Kokeile tätä vastausta: '+message);
         
