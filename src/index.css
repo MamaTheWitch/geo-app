@@ -1,13 +1,66 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  background-color: #000103;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1.5vmin);
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Garet', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+button {
+  background-color: #95FFC9;
+  font-size: calc(10px + 1.5vmin);
+  font-family: 'Garet';
+  margin: 0;
+}
+#logo {
+  max-height: none;
+  margin: none;
+  width: 100%;
+}
+img {
+  max-height: 200px;
+  margin: 10px 10px 10px 10px;
+}
+ p {
+  margin: 10px;
+  font-size: calc(10px + 1.3vmin);
+  align-items: center;
+ }
+
+ h1 {
+  margin: 10px;
+  font-size: calc(10px + 1.8vmin);
+  align-items: center;
+ }
+label {
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+}
+input {
+  margin: 10px 10px 10px 10px;
+  width: 20%;
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+form {
+  margin: 10px 10px 10px 10px;
+}
+
+a {
+  color: #61dafb;
 }
