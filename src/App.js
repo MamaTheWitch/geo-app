@@ -65,12 +65,12 @@ const App = () => {
     if (loggedIn) {
       interval = setInterval(() => {
         setTimer((prevTimer) => prevTimer + 1);
-        if (timer === 300) {
+        if (timer === 150) {
           setShowMap(true);
           setShowPicture(true);
           
         }
-        if (timer === 600) {
+        if (timer === 300) {
           setShowHint(true);
         }
         if (timer === 900) {
