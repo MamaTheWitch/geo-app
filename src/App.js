@@ -11,6 +11,7 @@ const App = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answer, setAnswer] = useState('');
   const [timer, setTimer] = useState(0);
+  const [timertotal, setTimertotal] = useState(0);
   const [showHint, setShowHint] = useState(false);
   const [showPicture, setShowPicture] = useState(false);
   const [showMap, setShowMap] = useState(false);
@@ -59,12 +60,23 @@ const App = () => {
       alert('Väärä vastaus! Yritä uudelleen.');
     }
   };
+  useEffect(() => {
+    let data = JSON.parse(localStorage.getItem("data")) || [];
+    if (data.length === 3)
+    { setLoggedIn (data[0]);
+      setTimertotal (data[1]);
+      setCurrentQuestion (data[2]);
+}
+  }, []);
 
   useEffect(() => {
     let interval = null;
     if (loggedIn) {
       interval = setInterval(() => {
+        localStorage.setItem("data", JSON.stringify([loggedIn, timertotal, currentQuestion]));
+
         setTimer((prevTimer) => prevTimer + 1);
+        setTimertotal((prevTimertotal) => prevTimertotal + 1);
         if (timer === 3) {
           setShowHint(true);
         }
@@ -101,7 +113,7 @@ const App = () => {
               showHint={showHint}
               showPicture={showPicture}
               showMap={showMap}
-              timer={timer}
+              timer={timertotal}
               onAnswerChange={handleAnswerChange}
               onSubmitAnswer={handleSubmitAnswer}
             />) : (<ResultPage teams={teams} />)}>
