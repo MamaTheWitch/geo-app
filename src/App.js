@@ -18,7 +18,7 @@ const App = () => {
   const [teams, setTeams] = useState([]);
 
   const questions = [
-    { question: 'Quest 0: Etsi takapihan suurimmat urheiluvälineet ja hae sen ympäriltä ;)', answer: '2102' , hint: 'Etsi trampoliinin jalkojen ympäriltä.', picture: 'https://res.cloudinary.com/diauwizxz/image/upload/v1685518455/Q1_ydmzad.jpg' , maps: 'https://goo.gl/maps/LrfQxSERVtcQGDke9?coh=178572&entry=tt'},
+    { question: 'Quest 0: Etsi takapihan suurimmat urheiluvälineet ja hae sen ympäriltä', answer: '2102' , hint: 'Etsi trampoliinin jalkojen ympäriltä.', picture: 'https://res.cloudinary.com/diauwizxz/image/upload/v1685518455/Q1_ydmzad.jpg' , maps: 'https://goo.gl/maps/LrfQxSERVtcQGDke9?coh=178572&entry=tt'},
     { question: 'Quest 1: Etsi muumitalo, mutta älä mene sisään!', answer: '3245' , hint: 'Etsi pensaita kadun varrelta.', picture: 'https://res.cloudinary.com/diauwizxz/image/upload/v1685518455/Q2_w4wka3.jpg' , maps: 'https://goo.gl/maps/6VhdSs4SjZMbhir47?coh=178572&entry=tt'},
     { question: 'Quest 2: Tämän koulun peruskorjaus valmistuu kesäkuussa 2023.', answer: '6911' , hint: 'Hae metrin etäisyydellä infotaulusta.', picture: 'https://res.cloudinary.com/diauwizxz/image/upload/v1685518455/Q3_we2xtu.jpg' , maps: 'https://goo.gl/maps/KY5qJZxvozHb97LX9?coh=178572&entry=tt'},
     { question: 'Quest 3: Paikallinen päiväkoti mäellä.', answer: '5812' , hint: 'Tarkista kuvan ottopaikan puut.', picture: 'https://res.cloudinary.com/diauwizxz/image/upload/v1685518455/Q4_fvhdke.jpg' , maps: 'https://goo.gl/maps/gCRcZYqTXTxfG7u86?coh=178572&entry=tt'},
@@ -65,15 +65,12 @@ const App = () => {
     if (loggedIn) {
       interval = setInterval(() => {
         setTimer((prevTimer) => prevTimer + 1);
-        if (timer === 3) {
+        if (timer === 150) {
           setShowMap(true);
           setShowPicture(true);
-          
-        }
-        if (timer === 5) {
           setShowHint(true);
         }
-        if (timer === 7) {
+        if (timer === 600) {
          const message=questions[currentQuestion].answer;
           alert('Kokeile tätä vastausta: '+message);
         
