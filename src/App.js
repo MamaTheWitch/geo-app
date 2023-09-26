@@ -65,16 +65,18 @@ const App = () => {
     if (loggedIn) {
       interval = setInterval(() => {
         setTimer((prevTimer) => prevTimer + 1);
-        if (timer === 150) {
-          setShowMap(true);
-          setShowPicture(true);
+        if (timer === 3) {
           setShowHint(true);
         }
-        if (timer === 600) {
+        if (timer === 6) {
+        setShowMap(true);
+        setShowPicture(true);
+        }
+        if (timer === 9) {
          const message=questions[currentQuestion].answer;
           alert('Kokeile tätä vastausta: '+message);
         
-      }
+        }
       }, 1000);
     }
     return () => clearInterval(interval);
